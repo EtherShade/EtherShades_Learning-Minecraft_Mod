@@ -2,6 +2,7 @@ package net.ethershadeyt.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.ethershadeyt.tutorialmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -43,7 +44,9 @@ public class TutorialMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+        }
     }
 
 
