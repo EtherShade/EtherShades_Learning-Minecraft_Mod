@@ -1,6 +1,7 @@
 package net.ethershadeyt.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.ethershadeyt.tutorialmod.item.ModCreativeModeTabs;
 import net.ethershadeyt.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +29,8 @@ public class TutorialMod
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
